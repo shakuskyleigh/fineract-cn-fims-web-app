@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '3d11e675-8e50-4cf5-97bd-b22cc6449a3f'
+  dockerRegistryServiceConnection: '186c5745-bb49-463c-b904-2eadee8959e8'
   imageRepository: 'fineractcnfimswebapp'
   containerRegistry: 'hubtel.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
@@ -26,7 +26,9 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool: default
+    pool:
+      name: default
+      demands: KubeAlone
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
