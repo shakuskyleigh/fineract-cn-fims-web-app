@@ -47,10 +47,10 @@ export class DepositProductCreateComponent implements OnInit, OnDestroy {
     interest: 0,
     charges: [],
     currency: {
-      code: 'USD',
-      name: '',
+      code: 'GHS',
+      name: 'Ghana Cedi',
       scale: 2,
-      sign: ''
+      sign: '¢'
     },
     flexible: false,
     minimumBalance: 0,
